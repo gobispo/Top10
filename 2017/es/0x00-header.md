@@ -8,7 +8,7 @@ Los diez riesgos más críticos en Aplicaciones Web
 
 ### Release Candidate 2
 
-Comments requested per instructions within
+Instrucciones para el envío de comentarios dentro del documento
 
 ![WASP Logo URL TBA](images/front-wasp.png)
 
