@@ -1,8 +1,9 @@
 ## Prefacio
 
-El software inseguro está debilitando las finanzas, salud, defensa, energía, y otras infraestructuras críticas. A medida que el software se convierte en algo crítico, complejo e interconectado, la dificultad de lograr seguridad en las aplicaciones aumenta exponencialmente. The rapid pace of modern software development processes makes risks even more critical to discover quickly and accurately. We can no longer afford to tolerate relatively simple security problems like those presented in this OWASP Top 10.
+El software inseguro está debilitando las finanzas, salud, defensa, energía, y otras infraestructuras críticas. A medida que el software se convierte en algo crítico, complejo e interconectado, la dificultad de lograr seguridad en las aplicaciones aumenta exponencialmente. El ritmo vertiginoso de los procesos de desarrollo de software actuales incrementan aún mas el riesgo de no descubrir vulnerabilidades de forma rápida y precisa. No se puede dar el lujo de tolerar problemas de seguridad rela=vamente sencillos, como los que se presentan en este OWASP Top 10.
 
-A great deal of feedback was received during the creation of the OWASP Top 10 2017, more than for any other equivalent OWASP effort. This shows how much passion the community has for the OWASP Top 10, and thus how critical it is for OWASP to get the Top 10 right for the majority of use cases.
+Durante la creación del OWASP Top 10 2017 se recibieron una gran cantidad de opiniones,muchas mas que cualquier otro proyecto de OWASP equivalente. Esto demostró la pasión que la comunidad posee por el OWASP Top 10, y lo crítico que es para OWASP obtener el Top 10 correcto para la mayoría de los casos de uso.
+
 
 Although the original goal of the OWASP Top 10 project was simply to raise awareness amongst developers, it has become the de facto application security standard. 
 
