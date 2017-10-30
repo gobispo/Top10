@@ -2,18 +2,18 @@
 
 | Agentes de amenaza/Vectores de ataque | Debilidad de seguridad           | Impactos               |
 | -- | -- | -- |
-| Nivel de Acceso  \| Cuan Explotable 2 | Prevalencia 3 \| Detección 2 | Técnico 3 \| Negocio |
-| Hasta los atacantes anónimos, típicamente no rompen directamente la criptografía. Ellos rompen algo más, tal como robar claves), hacer ataques del tipo man-in-the-middle, o robar datos en forma de texto directamente desde el servidor, mientras estos datos se encuentran en tránsito, o como cliente, por ejemplo desde el navegador del usuario. Ataques manuales son generalmente requeridos. | Desde los últimos años, este ha sido el ataque de gran impacto más común. La falla más común es simplemente no encriptar los datos sensibles. Cuando la criptografía es empleada, la generación de claves débiles, el débil manejo de las claves, el uso de algoritmos débiles es común, particularmente técnicas débiles de hashing de contraseñas. Para los datos en tránsito, las debilidades del lado del servidor son fáciles de detectar, pero difíciles para los datos en reposo. Ambas son de bastante y variada explotación. | El fracaso frecuentemente compromete todos los datos que debieron haber sido protegidos. Típicamente, esta información incluye información personal sensible como archivos historiales de salud, credenciales, datos personales, datos de tarjetas de crédito, los cual en ocasiones requieren protección según dictan las leyes y regulaciones, tales como la EU GDPR o leyes locales de privacidad. |
+| Nivel de Acceso  \| Explotabilidad 2 | Prevalencia 3 \| Detección 2 | Técnico 3 \| Negocio |
+| Hasta los atacantes anónimos, típicamente no rompen directamente la criptografía. Ellos rompen algo más, tal como robar claves, hacer ataques del tipo man-in-the-middle, o robar datos en forma de texto directamente desde el servidor, mientras estos datos se encuentran en tránsito, o como cliente, por ejemplo desde el navegador del usuario. Ataques manuales son generalmente requeridos. | Desde los últimos años, este ha sido el ataque de gran impacto más común. La falla más común es simplemente no encriptar los datos sensibles. Cuando la criptografía es empleada, la generación de claves débiles, el débil manejo de las claves, el uso de algoritmos débiles es común, particularmente técnicas débiles de hashing de contraseñas. Para los datos en tránsito, las debilidades del lado del servidor son fáciles de detectar, pero difíciles para los datos en reposo. Ambas son de bastante y variada explotación. | El fracaso frecuentemente compromete todos los datos que debieron haber sido protegidos. Típicamente, esta información incluye información personal sensible como archivos historiales de salud, credenciales, datos personales, datos de tarjetas de crédito, los cual en ocasiones requieren protección según dictan las leyes y regulaciones, tales como la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos) o leyes locales de privacidad. |
 
 ## Soy Vulnerable a la Exposición de datos?
 
-The first thing is to determine the protection needs of data in transit and at rest. For example, passwords, credit card numbers, health records, and personal information require extra protection, particularly if that data falls under the EU's General Data Protection Regulation (GDPR), local privacy laws or regulations, financial data protection regulations and laws, such as PCI Data Security Standard (PCI DSS), or health records laws, such as Portability Act (HIIPA). For all such data:
+Lo primero a determinar son las necesidades de protección de los datos en tránsito y en reposo. Por ejemplo, contraseñas, números de tarjetas de crédito, historiales médicos y la información personal requieren protección extra, particularmente si estos datos caen bajo la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos), regulaciones o leyes locales de privacidad, regulaciones de protección de datos financieros, tales como el Acuerdo PCI DSS del Consejo sobre Normas de Seguridad de la PCI (PCI Security Standards Council, LLC), o leyes de historiales médicos, tales como la ley de Transparencia y Responsabilidad de Seguro Médico (HIPAA). Para todo tipo de datos:
 
-* Is any data of a site transmitted in clear text, internally or externally? Internet traffic is especially dangerous, but from load balancers to web servers or from web servers to back end systems can be problematic.
-* Is sensitive data stored in clear text, including backups?
-Are any old or weak cryptographic algorithms used either by default or in older code? (see A6:2017 Security Misconfiguration)
-* Are default crypto keys in use, weak crypto keys generated or re-used, or is proper key management or rotation missing?
-* Is encryption not enforced, e.g. are any user agent (browser) security directives or headers missing?
+* ¿Es algún dato de un sitio transmitido en texto plano, de forma interna o externa? El tráfico de Internet es especialmente peligroso, pero desde el que balancea las cargas hasta los servidores web o desde los servidores web hasta los sistemas de back end, puede ser problemático.
+* ¿Son los datos sensibles guardados en texto plano, incluyendo los respaldos?
+¿Hay algún algoritmo criptográfico débil o viejo siendo usado por defecto o en código más viejo? (ver A6:2017 Configuración de Seguridad Incorrecta)
+* ¿Existen claves criptográficas por defecto en uso, claves de seguridad criptográficas débiles generadas o re-utilizadas, o falta de rotación o manejo apropiado de la clave?
+* ¿La encriptación es no forzada, por ejemplo, existe alguna directiva de seguridad o cabezales faltantes de algún agente de usuario(navegador)?
 
 See ASVS areas [Crypto (V7), Data Protection (V9) and SSL/TLS (V10)](https://www.owasp.org/index.php/ASVS)
 
@@ -42,20 +42,20 @@ Verify independently the effectiveness of your settings.
 ## Referencias
 
 
-* [OWASP Proactive Controls - Protect Data](https://www.owasp.org/index.php/OWASP_Proactive_Controls#7:_Protect_Data)
-* [OWASP Application Security Verification Standard - V9, V10, V11](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project)
-* [OWASP Cheat Sheet - Transport Layer Protection](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
-* [OWASP Cheat Sheet - User Privacy Protection](https://www.owasp.org/index.php/User_Privacy_Protection_Cheat_Sheet)
-* [OWASP Cheat Sheet - Password Storage](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
-* [OWASP Cheat Sheet - Cryptographic Storage](https://www.owasp.org/index.php/Cryptographic_Storage_Cheat_Sheet)
-* [OWASP Security Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project)
-* [OWASP Testing Guide - Testing for weak cryptography](https://www.owasp.org/index.php/Testing_for_weak_Cryptography)
+* [OWASP Controles Proactivos - Protección de Datos](https://www.owasp.org/index.php/OWASP_Proactive_Controls#7:_Protect_Data)
+* [OWASP Standard de Verificación de Seguridad de Aplicaciones - V9, V10, V11](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project)
+* [OWASP Cheat Sheet - Protección de Capa Transporte](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
+* [OWASP Cheat Sheet - Protección de Seguridad de Usuario](https://www.owasp.org/index.php/User_Privacy_Protection_Cheat_Sheet)
+* [OWASP Cheat Sheet - Almacenamiento de Contraseña](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
+* [OWASP Cheat Sheet - Almacenamiento Criptográfico](https://www.owasp.org/index.php/Cryptographic_Storage_Cheat_Sheet)
+* [OWASP Proyecto de Cabezales de Seguridad](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project)
+* [OWASP Guía de Testing - Testing para la criptografía débil](https://www.owasp.org/index.php/Testing_for_weak_Cryptography)
 
-### Externos
+### Externas
 
-* [CWE-359 Exposure of Private Information - Privacy Violation](https://cwe.mitre.org/data/definitions/359.html)
-* [CWE-220 Exposure of sens. information through data queries](https://cwe.mitre.org/data/definitions/220.html)
-* [CWE-310 Cryptographic Issues](https://cwe.mitre.org/data/definitions/310.html)
-* [CWE-312 Cleartext Storage of Sensitive Information](https://cwe.mitre.org/data/definitions/312.html)
-* [CWE-319 Cleartext Transmission of Sensitive Information](https://cwe.mitre.org/data/definitions/319.html)
-* [CWE-326 Weak Encryption](https://cwe.mitre.org/data/definitions/326.html)
+* [CWE-359 Exposición de Información Privada - Violación de Privacidad](https://cwe.mitre.org/data/definitions/359.html)
+* [CWE-220 Exposición de información sensible a través de consultas de datos](https://cwe.mitre.org/data/definitions/220.html)
+* [CWE-310 Problemas Criptográficos](https://cwe.mitre.org/data/definitions/310.html)
+* [CWE-312 Almacenamiento en Texto plano de Información Sensible](https://cwe.mitre.org/data/definitions/312.html)
+* [CWE-319 Transmisión en Texto plano de Información Sensible](https://cwe.mitre.org/data/definitions/319.html)
+* [CWE-326 Encriptación Débil](https://cwe.mitre.org/data/definitions/326.html)
