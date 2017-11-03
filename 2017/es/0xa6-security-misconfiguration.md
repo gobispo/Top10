@@ -49,7 +49,7 @@ Establecer las siguientes principales recomendaciones:
 * [Guía de prueba de OWASP: Gestión de la Configuración](https://www.owasp.org/index.php/Testing_for_configuration_management)
 * [Guía de prueba de OWASP: Prueba de Error de Código](https://www.owasp.org/index.php/Testing_for_Error_Code_(OWASP-IG-006))
 
-Para conocer los requisitos adicionales en esta área, consulte la sección de requisitos de [ASVS para Configuración de seguridad (V11 y V19)](https://www.owasp.org/index.php/ASVS).
+Para conocer más sobre requisitos adicionales en esta área, consulte la sección de requisitos de [ASVS para Configuración de seguridad (V11 y V19)](https://www.owasp.org/index.php/ASVS).
 
 ### Externos
 
