@@ -46,7 +46,7 @@ Numerosos problemas XXE públicos han sido descubiertos, incluyendo el ataque a 
    <!ENTITY xxe SYSTEM "https://192.168.1.1/private" >]>
 ```
 
-**Escenario #3**: Un atacante intenta un ataque de denegación de servicio incluyendo un archivo potencialmente endless:
+**Escenario #3**: Un atacante intenta un ataque de denegación de servicio incluyendo un archivo potencialmente sin fin:
 
 ```
    <!ENTITY xxe SYSTEM "file:///dev/random" >]>
