@@ -1,9 +1,9 @@
 # A3:2017 Exposición de Datos Sensibles
 
-| Agentes de amenaza/Vectores de ataque | Debilidad de seguridad           | Impactos               |
+| Agentes de amenaza/Vectores de ataque | Debilidad de Seguridad           | Impactos               |
 | -- | -- | -- |
-| Nivel de Acceso  \| Explotabilidad 2 | Prevalencia 3 \| Detección 2 | Técnico 3 \| Negocio |
-| Hasta los atacantes anónimos, típicamente no rompen directamente la criptografía. Ellos rompen algo más, tal como robar claves, hacer ataques del tipo man-in-the-middle, o robar datos en forma de texto directamente desde el servidor, mientras estos datos se encuentran en tránsito, o como cliente, por ejemplo desde el navegador del usuario. Ataques manuales son generalmente requeridos. | Desde los últimos años, este ha sido el ataque de gran impacto más común. La falla más común es simplemente no encriptar los datos sensibles. Cuando la criptografía es empleada, la generación de claves débiles, el débil manejo de las claves, el uso de algoritmos débiles es común, particularmente técnicas débiles de hashing de contraseñas. Para los datos en tránsito, las debilidades del lado del servidor son fáciles de detectar, pero difíciles para los datos en reposo. Ambas son de bastante y variada explotación. | El fracaso frecuentemente compromete todos los datos que debieron haber sido protegidos. Típicamente, esta información incluye información personal sensible como archivos historiales de salud, credenciales, datos personales, datos de tarjetas de crédito, los cual en ocasiones requieren protección según dictan las leyes y regulaciones, tales como la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos) o leyes locales de privacidad. |
+| Niv. de Acceso  \| Explotabilidad 2 | Prevalencia 3 \| Detección 2 | Técnico 3 \| Negocio |
+| Hasta los atacantes anónimos, típicamente no rompen directamente la criptografía. Ellos rompen algo más, tal como robar claves, hacer ataques del tipo man-in-the-middle, o robar datos en forma de texto directamente desde el servidor, mientras estos datos se encuentran en tránsito, o como cliente, por ejemplo desde el navegador del usuario. Ataques manuales son generalmente requeridos. | Desde los últimos años, este ha sido el ataque de gran impacto más común. La falla más común es simplemente no encriptar los datos sensibles. Cuando la criptografía es empleada, la generación de claves débiles, el débil manejo de las claves, el uso de algoritmos débiles es común, particularmente técnicas débiles de hashing de contraseñas. Para los datos en tránsito, las debilidades del lado del servidor son fáciles de detectar, pero difíciles para los datos en reposo. Ambas son de bastante y variada explotación. | El fracaso frecuentemente compromete todos los datos que debieron haber sido protegidos. Típicamente, esta información incluye información personal sensible(PII, Información Personal Identificable) como  historiales médicos, credenciales, datos personales, datos de tarjetas de crédito, los cual en ocasiones requieren protección según dictan las leyes y regulaciones, tales como la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos) o leyes locales de privacidad. |
 
 ## Soy Vulnerable a la Exposición de datos?
 
@@ -15,27 +15,32 @@ Lo primero a determinar son las necesidades de protección de los datos en trán
 * ¿Existen claves criptográficas por defecto en uso, claves de seguridad criptográficas débiles generadas o re-utilizadas, o falta de rotación o manejo apropiado de la clave?
 * ¿La encriptación es no forzada, por ejemplo, existe alguna directiva de seguridad o cabezales faltantes de algún agente de usuario(navegador)?
 
-See ASVS areas [Crypto (V7), Data Protection (V9) and SSL/TLS (V10)](https://www.owasp.org/index.php/ASVS)
+Ver áreas ASVS [Crypto (V7), Protección de Datos (V9) y SSL/TLS (V10)](https://www.owasp.org/index.php/ASVS)
 
 ## Como prevenirlo?
 
-Do the following, at a minimum and consult the references:
+Hace lo siguiente como mínimo y consulta las referencias:
 
-* Classify data processed, stored or transmitted by a system. Apply controls as per the classification.
-Review the privacy laws or regulations applicable to sensitive data, and protect as per regulatory requirements
-* Don’t store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant tokenization or even truncation. Data you don’t retain can’t be stolen.
-* Make sure you encrypt all sensitive data at rest 
+* Clasificar los datos procesados, almacenados o transmitidos por un sistema. Aplicar controles según la clasificación.
+Revisar las leyes de privacidad o regulaciones aplicables a los datos sensibles, y protegerlos según los requerimientos regulatorios.
+* No almacene datos sensibles innecesariamente. Deseche los datos tan pronto como sea posible o utilize tokenización que cumpla con PCI DSS. Los datos que no retiene, no pueden ser robados.
+* Asegurese de enriptar todos los datos sensibles que se encuentren en reposo.
 * Encrypt all data in transit, such as using TLS. Enforce this using directives like HTTP Strict Transport Security (HSTS).
+* Encripte todos los datos en transito, tal como utilizando TLS. Asegurese utilizando directivas como HTTP Strict Transport Security (HSTS).
 * Ensure up-to-date and strong standard algorithms or ciphers, parameters, protocols and keys are used, and proper key management is in place. Consider using [crypto modules](http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm).
+* Asegurese de actualizar, y de que algoritmos o cifrados de standards robustos, parametros, protocolos y claves sean utilizadas, y que una adecuada gerencia de estas claves esta definida. Considere usar [crypto modulos](http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm).
 * Ensure passwords are stored with a strong adaptive algorithm appropriate for password protection, such as [Argon2](https://www.cryptolux.org/index.php/Argon2), [scrypt](http://en.wikipedia.org/wiki/Scrypt), [bcrypt](http://en.wikipedia.org/wiki/Bcrypt) and [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2). Configure the work factor (delay factor) as high as you can tolerate.
-* Disable caching for response that contain sensitive data.
-Verify independently the effectiveness of your settings.
+* Asegurese que las contraseñas son almacenadas con un algoritmo adaptativo fuerte, apropiado para la protección de contraseñas, tál como [Argon2](https://www.cryptolux.org/index.php/Argon2), [scrypt](http://en.wikipedia.org/wiki/Scrypt), [bcrypt](http://en.wikipedia.org/wiki/Bcrypt) and [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2). Configure el factor de trabajo (factor de delay) tan alto como pueda tolerar.
+* Deshabilite el cacheado para respuestas que contengan datos sensibles.
+Verifique la efectividad de sus configuraciones independientemente.
+
 
 ## Ejemplo de Escenarios de Ataque
 
-**Escenario #1**:  An application encrypts credit card numbers in a database using automatic database encryption. However, this data is automatically decrypted when retrieved, allowing an SQL injection flaw to retrieve credit card numbers in clear text. 
+**Escenario #1**:  Una aplicación encripta números de tarjetas de crédito en una base de datos utilizando la encriptación automática de la base de datos. Sin embargo, estos datos son automaticamente desebcriptados, permitiendo que una falla de injección SQL recoga los numeros de tarjetas de crédito en texto plano. 
 
 **Escenario #2**: A site doesn't use or enforce TLS for all pages, or if it supports weak encryption. An attacker simply monitors network traffic, strips or intercepts the TLS (like an open wireless network), and steals the user's session cookie. The attacker then replays this cookie and hijacks the user's (authenticated) session, accessing or modifying the user's private data. Instead of the above he could alter all transported data, e.g. the recipient of a money transfer.
+Un sitio no utiliza o fuerza el uso de TLS para todas las páginas, o contiene enriptación debil. Un atacante simplemente monitorea el tráfico de la red, desnuda o intercepta el TLS(como una red inhalambrica abierta), y rova las cookies de sesión del usuario. El atacante entonces recarga esta cookie y secuestra la sesion del usuario(autenticado), accediendo o modificando los datos privados del usuario. Instead of the above he could alter all transported data, e.g. the recipient of a money transfer.
 
 **Escenario #3**: The password database uses unsalted hashes to store everyone's passwords. A file upload flaw allows an attacker to retrieve the password database. All the unsalted hashes can be exposed with a rainbow table of pre-calculated hashes.
 
