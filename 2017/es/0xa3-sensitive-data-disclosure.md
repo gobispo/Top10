@@ -22,7 +22,7 @@ Ver áreas ASVS [Crypto (V7), Protección de Datos (V9) y SSL/TLS (V10)](https:/
 Haz lo siguiente como mínimo y consulta las referencias:
 
 * Clasificar los datos procesados, almacenados o transmitidos por un sistema. Aplicar controles según la clasificación.
-Revisar las leyes de privacidad o regulaciones aplicables a los datos sensibles, y protegerlos según los requerimientos regulatorios.
+Revisar las leyes de privacidad o regulaciones aplicables a los datos sensibles y protegerlos según los requerimientos regulatorios.
 * No almacene datos sensibles innecesariamente. Deseche los datos tan pronto como sea posible o utilice un sistema de tokens que cumpla con PCI DSS. Los datos que no retiene, no pueden ser robados.
 * Asegúrese de encriptar todos los datos sensibles que se encuentren en reposo.    
 * Encripte todos los datos en tránsito, tal como utilizando TLS. Refuerce esta medida utilizando directivas de Seguridad de Transporte HTTP Estricta (HSTS).
