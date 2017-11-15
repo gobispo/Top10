@@ -19,7 +19,7 @@ Ver áreas ASVS [Crypto (V7), Protección de Datos (V9) y SSL/TLS (V10)](https:/
 
 ## Como prevenirlo?
 
-Hace lo siguiente como mínimo y consulta las referencias:
+Haz lo siguiente como mínimo y consulta las referencias:
 
 * Clasificar los datos procesados, almacenados o transmitidos por un sistema. Aplicar controles según la clasificación.
 Revisar las leyes de privacidad o regulaciones aplicables a los datos sensibles, y protegerlos según los requerimientos regulatorios.
