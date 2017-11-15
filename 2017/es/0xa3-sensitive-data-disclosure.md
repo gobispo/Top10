@@ -27,7 +27,7 @@ Revisar las leyes de privacidad o regulaciones aplicables a los datos sensibles 
 * Asegúrese de encriptar todos los datos sensibles que se encuentren en reposo.    
 * Encripte todos los datos en tránsito, tal como utilizando TLS. Refuerce esta medida utilizando directivas de Seguridad de Transporte HTTP Estricta (HSTS).
 * Asegúrese de que algoritmos robustos o cifrados, parámetros, protocolos y claves actualizadas sean utilizados, además de tener una adecuada gerencia de claves definida. Considere usar [crypto módulos](http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm).
-* Asegúrese de que las contraseñas estén almacenadas con un algoritmo adaptativo fuerte, apropiado para la protección de contraseñas, tal como [Argon2](https://www.cryptolux.org/index.php/Argon2), [scrypt](http://en.wikipedia.org/wiki/Scrypt), [bcrypt](http://en.wikipedia.org/wiki/Bcrypt) and [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2). Configure el factor de trabajo (factor de retraso) tan alto como pueda tolerar.
+* Asegúrese de que las contraseñas estén almacenadas con un algoritmo adaptativo fuerte, apropiado para la protección de contraseñas, tal como [Argon2](https://www.cryptolux.org/index.php/Argon2), [scrypt](http://en.wikipedia.org/wiki/Scrypt), [bcrypt](http://en.wikipedia.org/wiki/Bcrypt) y [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2). Configure el factor de trabajo (factor de retraso) tan alto como pueda tolerar.
 * Deshabilite el cacheado para respuestas que contengan datos sensibles.
 Verifique la efectividad de sus configuraciones independientemente.
 
