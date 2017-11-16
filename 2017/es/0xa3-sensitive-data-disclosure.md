@@ -5,7 +5,7 @@
 | Niv. de Acceso  \| Explotabilidad 2 | Prevalencia 3 \| Detección 2 | Técnico 3 \| Negocio |
 | Hasta los atacantes anónimos, típicamente no rompen directamente la criptografía. Ellos rompen algo más, tal como robar claves, hacer ataques del tipo man-in-the-middle, o robar datos en texto plano directamente desde el servidor, mientras estos datos se encuentran en tránsito, o como cliente, por ejemplo desde el navegador del usuario. Ataques manuales son generalmente requeridos. | Desde los últimos años, este ha sido el ataque de gran impacto más común. La falla más común es simplemente no encriptar los datos sensibles. Cuando la criptografía es empleada, la generación de claves débiles, el débil manejo de las claves, el uso de algoritmos débiles es común, particularmente técnicas débiles de hashing de contraseñas. Para los datos en tránsito, las debilidades del lado del servidor son fáciles de detectar, pero difíciles para los datos en reposo. Ambas son de bastante y variada explotación. | El fracaso frecuentemente compromete todos los datos que debieron haber sido protegidos. Típicamente, esta información incluye información personal sensible(PII, Información Personal Identificable) como  historiales médicos, credenciales, datos personales, datos de tarjetas de crédito, los cuales en ocasiones requieren protección según dictan leyes y regulaciones, tales como la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos) o leyes locales de privacidad. |
 
-## Soy Vulnerable a la Exposición de datos?
+## ¿Soy Vulnerable a la Exposición de datos?
 
 Lo primero a determinar son las necesidades de protección de los datos en tránsito y en reposo. Por ejemplo contraseñas, números de tarjetas de crédito, historiales médicos y la información personal requieren protección extra, particularmente si estos datos caen bajo la regulación de la Unión Europea, GDPR (Regulación General de Protección de Datos), regulaciones o leyes locales de privacidad, regulaciones de protección de datos financieros, tales como el Acuerdo PCI DSS del Consejo sobre Normas de Seguridad de la PCI (PCI Security Standards Council, LLC), o leyes de historiales médicos, tales como la ley de Transparencia y Responsabilidad de Seguro Médico (HIPAA). Para todo tipo de datos:
 
@@ -17,7 +17,7 @@ Lo primero a determinar son las necesidades de protección de los datos en trán
 
 Ver áreas ASVS [Crypto (V7), Protección de Datos (V9) y SSL/TLS (V10)](https://www.owasp.org/index.php/ASVS)
 
-## Como prevenirlo?
+## ¿Como prevenirlo?
 
 Haz lo siguiente como mínimo y consulta las referencias:
 
